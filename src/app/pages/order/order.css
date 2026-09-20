@@ -116,8 +116,42 @@
     line-height: 1.2;
 }
 
+.main-calculate-block {
+    position: relative;
+    z-index: 1;
+}
+
 .calculate-button {
     width: 100%;
+}
+
+.calculate-loader-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(1px);
+    border-radius: 16px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.calculate-loader {
+    width: 44px;
+    height: 44px;
+    border: 4px solid rgba(255, 138, 61, 0.25);
+    border-top-color: #ff8a3d;
+    border-radius: 50%;
+    animation: calculate-spin 0.7s linear infinite;
+    box-shadow: 0 0 0 6px rgba(255, 138, 61, 0.06);
+}
+
+@keyframes calculate-spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .main-result {
